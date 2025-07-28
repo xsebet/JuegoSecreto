@@ -8,11 +8,8 @@ let max_intento = Number (0);
 
 function establecer_juego() {
     AsignatTextoElemento('p', 'Indica maximo de intento');
-
     const valorUsuario = parseInt(document.getElementById('Usuario').value);
     if (valorUsuario > 0) {
-        nrosecreto=generarNumeroSecreto();
-        console.log (nrosecreto);
         max_intento = valorUsuario;
         AsignatTextoElemento('p', `Indica un número del 1 al ${numeromax}.  ${cont}/${max_intento}`);
         return true;
@@ -24,6 +21,8 @@ function establecer_juego() {
 
 
 function inicio() {
+    nrosecreto=generarNumeroSecreto();
+    console.log (nrosecreto);
     const juegoValido = establecer_juego();
 
     if (!juegoValido) return; // Si no se ingresó bien, no continúa
@@ -122,7 +121,6 @@ function verificar_Intento() {
 
 
 function reiniciar_juego() {
-    nrosecreto= generarNumeroSecreto ();
     cont = Number (1);
     max_intento = Number (0);
 
